@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" name="id" id="id" />
+    <br /><br />
+    <button onclick="getResponse()">Click for response</button>
+    <p id="data"></p>
+  </body>
+  <script>
+    function getResponse() {
+      let p = document.getElementById("data");
+      let idString = document.getElementById("id").value;
+      let idInt = parseInt(idString, 10);
+
+      const url = "res.php";
+      fetch(url)
+        .then((response) => {
+          console.log(response);
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+
+          return response.json();
+        })
+        .then((data) => {
+          //console.log("Data from server:", data);
+          //document.write(`<p>${data.message}</p>`);
+          // console.log(idInt);
+          // p.textContent = "Hello! 😘 " + idInt == 0 ? data.message[idInt - 1] : console.log("Invalid  id");
+          idInt !== 0
+            ? (p.textContent = "Hello! 😘 " + data.message[idInt - 1])
+            : alert("Invalid Id");
+        })
+        .catch((error) => {
+          console.error("Fetch error:", error);
+        });
+    }
+  </script>
+</html>
