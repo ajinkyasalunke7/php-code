@@ -1,0 +1,880 @@
+Pimpri Chinchwad Education Trust’s
+Pimpri Chinchwad Polytechnic
+(NBA Accredited and ISO 9001:2015 Certified
+Department)
+
+CO-R-09
+Revision : 00
+
+Date : 01/06/2018
+
+Computer Department
+Academic Year – 2022-23(Even Sem)
+CO6I
+
+WBP
+
+2022-2023
+
+Instructions:
+1. Practical skill test is of 30 marks. Each task carries 10 marks. 2.
+Illustrate your task/s with neat sketches wherever necessary
+3.
+Preferably, attempt the tasks in sequential order.
+
+Slip 1.
+Task 1
+
+Marks
+Create a class as “Rectangle”with two properties as length and width.
+Calculate perimeter and Area of Rectangle.
+<?php
+class Rectangle {
+private $length;
+private $width;
+public function __construct($length, $width) {
+$this->length = $length;
+$this->width = $width;
+}
+public function getArea() {
+return $this->length * $this->width;
+}
+public function getPerimeter() {
+return 2 * ($this->length + $this->width);
+}
+}
+
+Task 2
+Task 3
+Slip 2.
+
+$rectangle = new Rectangle(12, 9);
+echo "Area: " . $rectangle->getArea() . "</br>";
+echo "Perimeter: " . $rectangle->getPerimeter() .
+"</br>";
+?>
+List any four advantages of PHP?
+Oral
+Marks
+
+Task 1
+
+Write PHP script to update records in table of MySQL database.
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+// Create connection
+$conn = mysqli_connect($servername, $username,
+$password, $dbname);
+// Check connection
+if (!$conn) {
+die("Connection failed: " .
+mysqli_connect_error());
+}
+$sql = "UPDATE MyGuests SET lastname='Doe' WHERE
+id=2";
+
+Task 2
+
+if (mysqli_query($conn, $sql)) {
+echo "Record updated successfully";
+} else {
+echo "Error updating record: " .
+mysqli_error($conn);
+}
+mysqli_close($conn);
+?>
+State the use of str_word_count along with its syntax
+
+Task 3
+
+Oral
+
+Slip 3
+
+Marks
+
+Task 1
+
+Write PHP script to insert one record in student Registration
+table(roll_no,name,city,mobile_no)in MySQL database
+
+Task 2
+
+Define serialization
+
+Task 3
+
+Oral
+
+Slip 4
+Task 1
+
+Marks
+Create Customer form like customer name,mobile
+no,Address,item_purchase,Amount using different form input element
+and display user inserted values in new PHP form
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initialscale=1.0">
+<title>Customer Details</title>
+</head>
+
+<body>
+<h2>Customer Details</h2>
+<?php
+// Retrieve form data
+$name = $_POST['name'];
+$mobile = $_POST['mobile'];
+$address = $_POST['address'];
+$item_purchase = $_POST['item_purchase'];
+$amount = $_POST['amount'];
+
+Task 2
+
+// Display user-inserted values
+echo "<p><strong>Name:</strong> $name</p>";
+echo "<p><strong>Mobile Number:</strong> $mobile</p>";
+echo "<p><strong>Address:</strong> $address</p>";
+echo "<p><strong>Item Purchased:</strong> $item_purchase</p>";
+echo "<p><strong>Amount:</strong> $amount</p>";
+?>
+</body>
+</html>
+Write the syntax for creating Cookie
+
+Task 3
+
+Oral
+
+Slip 5
+
+Marks
+
+Task 1
+
+Write a PHP script to display all the records of students (Roll
+no,Name,Class,Marks) from MySQL table std_info in table format
+
+Task 2
+
+Write syntax of Connecting PHP Webpage with MySQL'
+
+Task 3
+
+Oral
+
+Slip 6
+Task 1
+
+Marks
+Write a PHP program to add two numbers using text field.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initialscale=1.0">
+<title>Add Two Numbers</title>
+</head>
+<body>
+<h2>Add Two Numbers</h2>
+<form action="" method="POST">
+<label for="num1">Enter first number:</label>
+<input type="text" id="num1" name="num1"
+required><br><br>
+<label for="num2">Enter second number:</label>
+<input type="text" id="num2" name="num2"
+required><br><br>
+<input type="submit" value="Add">
+
+</form>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+// Retrieve values from the form
+$num1 = $_POST['num1'];
+$num2 = $_POST['num2'];
+// Validate if both inputs are numeric
+if (is_numeric($num1) && is_numeric($num2)) {
+// Perform addition
+$sum = $num1 + $num2;
+echo "<h3>Result: $num1 + $num2 = $sum</h3>";
+} else {
+echo "<h3>Please enter valid numeric values.</h3>";
+}
+
+Task 2
+
+}
+?>
+</body>
+</html>
+Define GET and POST methods
+
+Task 3
+
+Oral
+
+Slip 7
+Task 1
+
+Marks
+Write a PHP program to print values of an array using
+foreach statement.
+<!DOCTYPE html>
+<html >
+<head>
+<title>Print Array Values using foreach</title>
+</head>
+<body>
+<h2>Array Values</h2>
+<?php
+// Define an array
+$numbers = array(10, 20, 30, 40, 50);
+
+Task 2
+
+// Print array values using foreach loop
+echo "<p>Array values:</p>";
+echo "<ul>";
+foreach ($numbers as $value) {
+echo "<li>$value</li>";
+}
+echo "</ul>";
+?>
+</body>
+</html>
+State the use of "$" sign in PHP.
+
+Task 3
+
+Oral
+
+Slip 8
+Task 1
+
+Marks
+Write a PHP program to print arithmetic operations using Switch
+statement.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initialscale=1.0">
+<title>Arithmetic Operations using Switch</title>
+</head>
+<body>
+<h2>Arithmetic Operations</h2>
+<form action="" method="post">
+<label for="operation">Select an operation:</label>
+<select name="operation" id="operation">
+<option value="add">Addition (+)</option>
+<option value="subtract">Subtraction (-)</option>
+<option value="multiply">Multiplication (*)</option>
+<option value="divide">Division (/)</option>
+</select>
+<br><br>
+<label for="num1">Enter first number:</label>
+<input type="text" id="num1" name="num1"
+required><br><br>
+<label for="num2">Enter second number:</label>
+<input type="text" id="num2" name="num2"
+required><br><br>
+<input type="submit" value="Calculate">
+</form>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$operation = $_POST["operation"];
+$num1 = $_POST["num1"];
+$num2 = $_POST["num2"];
+switch ($operation) {
+case "add":
+$result = $num1 + $num2;
+echo "<p>$num1 + $num2 = $result</p>";
+break;
+case "subtract":
+$result = $num1 - $num2;
+echo "<p>$num1 - $num2 = $result</p>";
+break;
+case "multiply":
+
+$result = $num1 * $num2;
+echo "<p>$num1 * $num2 = $result</p>";
+break;
+case "divide":
+if ($num2 != 0) {
+$result = $num1 / $num2;
+echo "<p>$num1 / $num2 = $result</p>";
+} else {
+echo "<p>Error: Division by zero</p>";
+}
+break;
+default:
+echo "<p>Invalid operation</p>";
+break;
+}
+
+Task 2
+
+}
+?>
+</body>
+</html>
+Differentiate GET and POST method
+
+Task 3
+
+Oral
+
+Slip 9
+Task 1
+
+Marks
+Write a PHP program to count the number of words in string- without
+using string function.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initialscale=1.0">
+<title>Count Words in String</title>
+</head>
+<body>
+<h2>Count Words in String</h2>
+<form action="" method="post">
+<label for="input">Enter a string:</label>
+<input type="text" id="input" name="input" required>
+<input type="submit" value="Count">
+</form>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$input = $_POST["input"];
+// Function to count words in a string
+function countWords($str) {
+$wordCount = 0;
+$isWord = false;
+// Iterate through each character of the string
+
+for ($i = 0; $i < strlen($str); $i++) {
+// If current character is not a space, set isWord to true
+if ($str[$i] != ' ') {
+$isWord = true;
+} else {
+// If current character is a space and previous character
+was part of a word,
+// increment wordCount and reset isWord to false
+if ($isWord) {
+$wordCount++;
+$isWord = false;
+}
+}
+}
+// Increment wordCount if the last character of the string is
+part of a word
+if ($isWord) {
+$wordCount++;
+}
+return $wordCount;
+}
+// Count words in the input string
+$wordCount = countWords($input);
+echo "<p>Number of words in the string: $wordCount</p>";
+
+Task 2
+
+}
+?>
+</body>
+</html>
+Explain Indexed and Associative arrays with suitable example.
+
+Task 3
+
+Oral
+
+Slip 10
+Task 1
+
+Marks
+Create Employee form like Employee name, Designation & Salary
+using different from input element & display user inserted values in
+same PHP form.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initialscale=1.0">
+<title>Employee Form</title>
+</head>
+<body>
+<h2>Employee Information</h2>
+<form action="<?php echo
+htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+
+<label for="name">Employee Name:</label>
+<input type="text" id="name" name="name" required><br><br>
+<label for="designation">Designation:</label>
+<input type="text" id="designation" name="designation"
+required><br><br>
+<label for="salary">Salary:</label>
+<input type="text" id="salary" name="salary"
+required><br><br>
+<input type="submit" name="submit" value="Submit">
+</form>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$name = $_POST["name"];
+$designation = $_POST["designation"];
+$salary = $_POST["salary"];
+echo "<h2>Employee Details</h2>";
+echo "<p><strong>Name:</strong> $name</p>";
+echo "<p><strong>Designation:</strong> $designation</p>";
+echo "<p><strong>Salary:</strong> $salary</p>";
+
+Task 2
+
+}
+?>
+</body>
+</html>
+Define Introspection and explain it with suitable example
+
+Task 3
+
+Oral
+
+Slip 11
+Task 1
+
+Marks
+Write a simple PHP program using expressions and operators.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initialscale=1.0">
+<title>Arithmetic Operations</title>
+</head>
+<body>
+<h2>Arithmetic Operations</h2>
+<?php
+// Define variables
+$num1 = 10;
+$num2 = 5;
+// Perform arithmetic operations
+$sum = $num1 + $num2;
+$difference = $num1 - $num2;
+
+$product = $num1 * $num2;
+$quotient = $num1 / $num2;
+
+Task 2
+
+// Display results
+echo "<p>Sum: $num1 + $num2 = $sum</p>";
+echo "<p>Difference: $num1 - $num2 = $difference</p>";
+echo "<p>Product: $num1 * $num2 = $product</p>";
+echo "<p>Quotient: $num1 / $num2 = $quotient</p>";
+?>
+</body>
+</html>
+Differentiate between Session and Cookies
+
+Task 3
+
+Oral
+
+Slip 12
+Task 1
+
+Marks
+
+Task 2
+
+Write a PHP script to Check the given number is ODD
+<?php
+$number=55;
+if($number%2==0)
+{
+echo "$number is Even Number";
+}
+else
+{
+echo "$number is Odd Number";
+}
+?>
+Differentiate between implode and explode functions
+
+Task 3
+
+Oral
+
+Slip 14
+Task 1
+
+Marks
+Write a PHP script to print Fibonacci
+<?php
+function fibonacci($n) {
+$fib = [];
+$fib[0] = 0;
+$fib[1] = 1;
+for ($i = 2; $i < $n; $i++) {
+$fib[$i] = $fib[$i - 1] + $fib[$i - 2];
+}
+return $fib;
+}
+$num_terms = 10;
+$fibonacci_sequence = fibonacci($num_terms);
+echo "Fibonacci sequence up to $num_terms terms: \n";
+foreach ($fibonacci_sequence as $term) {
+echo $term . " ";
+}
+?>
+
+Task 2
+
+State the variable function.Explain it with example
+
+Task 3
+
+Oral
+
+Slip 15
+Task 1
+
+Marks
+
+Task 2
+
+Write PHP script to demonstrate use of string function- strtolower ()
+& strtoupper () & strlen().
+Explain the concept of Serialization with example.
+
+Task 3
+
+Oral
+
+Slip 16
+Task 1
+
+Task 2
+Task 3
+
+Marks
+Write PHP Script to demonstrate use of associative arrays and for
+FOR EACH loop
+<?php
+// Define an associative array with key-value pairs
+$fruit_prices = array(
+"Apple" => 2.5,
+"Banana" => 1.2,
+"Orange" => 1.8,
+"Grapes" => 3.0
+);
+// Print out the fruit prices using a foreach loop
+foreach ($fruit_prices as $fruit => $price) {
+echo "The price of $fruit is $price dollars.\n";
+}
+?>
+Answer the following:
+i) Get session variables ii) Destroy session
+Oral
+
+Slip 13
+Task 1
+
+Marks
+Write a PHP script to find maximum number out of three given
+<?php
+function findMax($num1, $num2, $num3) {
+$max = $num1;
+if ($num2 > $max) {
+$max = $num2;
+}
+if ($num3 > $max) {
+$max = $num3;
+}
+return $max;
+}
+$num1 = 10;
+$num2 = 20;
+$num3 = 15;
+
+Task 2
+
+$max_number = findMax($num1, $num2, $num3);
+echo "The maximum number out of $num1, $num2, and $num3 is:
+$max_number";
+?>
+Define session and explain how it works
+
+Task 3
+
+Oral
+
+Slip 17
+Task 1
+
+Marks
+Write a program that demonstrate use of session
+<?php
+// Start the session
+session_start();
+// Set a session variable
+$_SESSION['username'] = "John";
+// Access and display the session variable
+echo "Welcome, " . $_SESSION['username'] . "!";
+
+Task 2
+
+// Destroy the session
+session_destroy();
+?>
+ExplainInserting and Retrieving the query result operations
+
+Task 3
+
+Oral
+
+Slip 18
+Task 1
+
+Marks
+Create a web page using GUI components.
+
+<html>
+<head>
+<title>Simple PHP Web Page</title>
+</head>
+<body>
+<h2>Simple PHP Web Page</h2>
+<form method="post">
+<label for="name">Enter Your Name:</label>
+<input type="text" id="name" name="name" required
+style="width:25%; "> <br>
+<input type="submit" name="submit" value="Submit">
+</form>
+<?php
+// Check if form is submitted
+if (isset($_POST['submit'])) {
+// Retrieve the user input
+$name = $_POST['name'];
+// Display a greeting message
+echo "<p>Hello, $name! Welcome to our website.</p>";
+}
+?>
+</body>
+</html>
+Task 2
+
+Explain any three data types used in PHP.
+
+Task 3
+
+Oral
+
+Slip 19
+
+Marks
+
+Task 1
+
+Write a program to connect PHP with MySQL.
+
+Task 2
+
+Explain the concept of overriding in detail.
+
+Task 3
+
+Oral
+
+Slip 20
+Task 1
+
+Marks
+Create a web page using GUI components and apply validation
+<html>
+<head>
+<title>Form Validation in PHP</title>
+</head>
+<body>
+<h2>Form Validation in PHP</h2>
+
+<form method="post">
+<div>
+<label for="name">Name:</label>
+<input type="text" id="name" name="name" required>
+</div>
+<div>
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required>
+<br>
+</div>
+<div>
+<label for="age">Age:</label>
+<input type="number" id="age" name="age" required> <br>
+</div>
+<div>
+<label for="message">Message:</label>
+<textarea id="message" name="message"
+required></textarea> <br>
+</div>
+<div>
+<input type="submit" name="submit" value="Submit">
+</div>
+</form>
+<?php
+// Check if the form is submitted
+if (isset($_POST['submit'])) {
+// Validate input fields
+$errors = array();
+$name = $_POST['name'];
+$email = $_POST['email'];
+$age = $_POST['age'];
+$message = $_POST['message'];
+if (empty($name)) {
+$errors[] = "Name is required.";
+}
+if (empty($email)) {
+$errors[] = "Email is required.";
+} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+$errors[] = "Invalid email format.";
+}
+if (empty($age)) {
+$errors[] = "Age is required.";
+} elseif ($age <= 0 || $age >= 120) {
+$errors[] = "Invalid age.";
+}
+if (empty($message)) {
+$errors[] = "Message is required.";
+
+}
+
+Task 2
+
+// If there are no errors, display success message
+if (empty($errors)) {
+echo "<p style='color: green;'>Form submitted
+successfully!</p>";
+// Here you can perform additional actions like saving data to
+a database
+} else {
+// If there are errors, display them
+echo "<p style='color: red;'>Please fix the following
+errors:</p>";
+echo "<ul>";
+foreach ($errors as $error) {
+echo "<li>$error</li>";
+}
+echo "</ul>";
+}
+}
+?>
+</body>
+</html>
+Explain web page validation.
+
+Task 3
+
+Oral
+
+Slip 21
+Task 1
+
+Marks
+Write a program to demonstrate parameterized Constructor
+<?php
+class Person {
+public $name;
+public $age;
+// Parameterized constructor
+public function __construct($name, $age) {
+$this->name = $name;
+$this->age = $age;
+}
+public function displayInfo() {
+echo "Name: " . $this->name . "<br>";
+echo "Age: " . $this->age . "<br>";
+}
+}
+// Creating an object with parameters passed to the constructor
+$person1 = new Person("John", 30);
+$person1->displayInfo();
+
+Task 2
+
+// Creating another object with different parameters
+$person2 = new Person("Alice", 25);
+$person2->displayInfo();
+?>
+What is Constructor? Explain its types
+
+Task 3
+
+Oral
+
+Slip 22
+Task 1
+
+Marks
+Write a program to implements multiple inheritance
+<?php
+// Define interfaces
+interface Animal {
+public function eat();
+}
+interface Vehicle {
+public function drive();
+}
+// Define traits
+trait LionTrait {
+public function eat() {
+echo "Lion is eating...\n";
+}
+}
+
+trait CarTrait {
+public function drive() {
+echo "Car is driving...\n";
+}
+}
+// Implement classes using interfaces and traits
+class Lion implements Animal {
+use LionTrait;
+}
+class Car implements Vehicle {
+use CarTrait;
+}
+class LionCar implements Animal, Vehicle {
+use LionTrait, CarTrait;
+}
+// Create objects and test
+$lion = new Lion();
+$lion->eat(); // Output: Lion is eating...
+$car = new Car();
+$car->drive(); // Output: Car is driving...
+
+Task 2
+
+$lionCar = new LionCar();
+$lionCar->eat(); // Output: Lion is eating...
+$lionCar->drive(); // Output: Car is driving...
+?>
+What is inheritance? Explain its types.
+
+Task 3
+
+Oral
+
+Ms.M. K. Kute
+(Subject Teacher)
+
+Prof. M. S. Malkar
+(HOD, CO Dept.)
+
+
